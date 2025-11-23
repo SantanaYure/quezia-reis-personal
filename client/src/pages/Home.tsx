@@ -113,7 +113,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-screen min-h-[500px] bg-cover bg-center flex items-center justify-center overflow-hidden">
           <img
-            src="/quezia-hero.jpg"
+            src="/quezia-about.png"
             alt="Quezia Reis Personal Trainer em ação"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -148,7 +148,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 mb-12 border-l-4 border-[#ffc2ce]">
+            <div className="bg-white rounded-lg p-6 md:p-8 mb-12">
               <p className="text-xl text-[#0b110d] italic font-semibold">
                 "Minha meta é que você tenha constância e resultados, com um planejamento que funciona de verdade no seu dia a dia."
               </p>
@@ -158,7 +158,7 @@ export default function Home() {
             {/* Method Cards */}
             <div className="grid md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#ffc2ce]">
+              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-4xl mb-4">🎯</div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Treino personalizado</h3>
                 <p className="text-[#0b110d]">
@@ -167,7 +167,7 @@ export default function Home() {
               </article>
 
               {/* Card 2 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#ffc2ce]">
+              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-4xl mb-4">🛡️</div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Segurança em primeiro lugar</h3>
                 <p className="text-[#0b110d]">
@@ -176,7 +176,7 @@ export default function Home() {
               </article>
 
               {/* Card 3 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#ffc2ce]">
+              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="text-4xl mb-4">⚡</div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Eficiência garantida</h3>
                 <p className="text-[#0b110d]">
@@ -199,15 +199,14 @@ export default function Home() {
               <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    AM
+                    R
                   </div>
                   <div>
-                    <p className="font-bold text-[#0b110d]">Amanda Martins</p>
-                    <p className="text-sm text-[#0b110d] opacity-75">Mãe de 2 filhos</p>
+                    <p className="font-bold text-[#0b110d]">Renilda</p>
                   </div>
                 </div>
                 <p className="text-[#0b110d] italic">
-                  "Quezia entendeu minha rotina caótica e criou um treino que realmente funciona. Em 3 meses já sinto a diferença!"
+                  "Eliminei 9 quilos, não sinto mais dores na coluna e estou passando pelo climatério de uma forma muito mais tranquila do que antes. Obrigada."
                 </p>
                 <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
               </article>
@@ -216,15 +215,14 @@ export default function Home() {
               <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    CS
+                    C
                   </div>
                   <div>
-                    <p className="font-bold text-[#0b110d]">Carolina Silva</p>
-                    <p className="text-sm text-[#0b110d] opacity-75">Executiva</p>
+                    <p className="font-bold text-[#0b110d]">Carla</p>
                   </div>
                 </div>
                 <p className="text-[#0b110d] italic">
-                  "Nunca pensei que conseguiria ganhar massa muscular trabalhando em casa. O acompanhamento dela é impecável!"
+                  "Fiz minha última quimio na sexta. Correu tudo bem. Muito feliz pelo processo ter sido tão leve pra mim, e você foi muito importante nesse processo, com os exercícios, apoio, incentivo, atenção e preocupação. Muito obrigada. E vamos que vamos para a próxima etapa."
                 </p>
                 <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
               </article>
@@ -233,15 +231,14 @@ export default function Home() {
               <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    JO
+                    EF
                   </div>
                   <div>
-                    <p className="font-bold text-[#0b110d]">Juliana Oliveira</p>
-                    <p className="text-sm text-[#0b110d] opacity-75">Professora</p>
+                    <p className="font-bold text-[#0b110d]">Elaine Fraga</p>
                   </div>
                 </div>
                 <p className="text-[#0b110d] italic">
-                  "Mais do que um treino, Quezia é uma motivação. Consegui resultados reais sem sacrificar minha vida."
+                  "Quel, melhor profissional que já conheci. Os treinos são maravilhosos e seguem o objetivo de cada pessoa. Tudo é personalizado em um aplicativo didático e simples, com muitos vídeos para cada exercício, o que ajuda a tirar dúvidas com facilidade. Faço online, mas o acompanhamento parece presencial. Ela realmente acompanha, responde, orienta e cobra. Tirei minhas dúvidas e tive ótimos resultados com a Quel. Estou amando."
                 </p>
                 <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
               </article>
@@ -332,7 +329,7 @@ export default function Home() {
               {/* Image */}
               <div className="order-2 md:order-1">
                 <img
-                  src="/quezia-about.png"
+                  src="/quezia-hero.jpg"
                   alt="Quezia Reis Personal Trainer"
                   className="rounded-lg shadow-lg w-full"
                 />
