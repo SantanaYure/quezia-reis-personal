@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#0b110d]">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#0b110d] border-b border-[#ffc2ce] shadow-lg">
+      <header className="sticky top-0 z-50 bg-[#0b110d] shadow-lg">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-1 font-bold text-2xl">
@@ -72,7 +72,7 @@ export default function Home() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0b110d] border-t border-[#ffc2ce] px-4 py-4 space-y-3">
+          <div className="md:hidden bg-[#0b110d] px-4 py-4 space-y-3">
             <button
               onClick={() => scrollToSection("metodo")}
               className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
