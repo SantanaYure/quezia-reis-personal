@@ -255,10 +255,10 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Plan 1 - Trimestral */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#ffc2ce]">
+              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col">
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano trimestral</h3>
                 <p className="text-[#ffc2ce] text-4xl font-bold mb-6">R$ 700</p>
-                <ul className="space-y-3 mb-8 text-[#0b110d]">
+                <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
                   <li className="flex items-center gap-2">
                     <span className="text-[#ffc2ce] font-bold">✓</span> Treino personalizado
                   </li>
@@ -276,20 +276,20 @@ export default function Home() {
                   href="https://wa.me/5571991408574?text=Gostaria%20de%20contratar%20o%20plano%20trimestral"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-[#ffc2ce] text-[#0b110d] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all"
+                  className="block w-full bg-[#ffc2ce] text-[#0b110d] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto"
                 >
                   Contratar agora
                 </a>
               </article>
 
               {/* Plan 2 - Anual */}
-              <article className="bg-[#ffc2ce] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#f0f0d8] relative">
+              <article className="bg-[#ffc2ce] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] relative flex flex-col">
                 <div className="absolute top-4 right-4 bg-[#0b110d] text-[#f0f0d8] px-4 py-1 rounded-full text-sm font-bold">
-                  Melhor valor
+                  Melhor custo-beneficio
                 </div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano anual</h3>
                 <p className="text-[#0b110d] text-4xl font-bold mb-6">R$ 1.500</p>
-                <ul className="space-y-3 mb-8 text-[#0b110d]">
+                <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
                   <li className="flex items-center gap-2">
                     <span className="font-bold">✓</span> Treino personalizado
                   </li>
@@ -313,7 +313,7 @@ export default function Home() {
                   href="https://wa.me/5571991408574?text=Gostaria%20de%20contratar%20o%20plano%20anual"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-[#0b110d] text-[#f0f0d8] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all"
+                  className="block w-full bg-[#0b110d] text-[#f0f0d8] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto"
                 >
                   Contratar agora
                 </a>
