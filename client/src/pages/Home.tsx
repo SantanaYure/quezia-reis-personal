@@ -173,9 +173,14 @@ export default function Home() {
       <main>
         <section className="relative h-screen min-h-[500px] bg-cover bg-center flex items-center justify-center overflow-hidden">
           <img
+            src="/quezia-about-mobile.png"
+            alt="Quezia Reis Personal Trainer em ação"
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+          />
+          <img
             src="/quezia-about.png"
             alt="Quezia Reis Personal Trainer em ação"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover hidden md:block"
           />
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="relative z-10 text-center text-white px-4 max-w-2xl mx-auto">
