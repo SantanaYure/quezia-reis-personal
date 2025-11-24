@@ -11,8 +11,7 @@
     "format": "prettier --write ."
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=18"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -80,7 +79,6 @@
     "add": "^2.0.6",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.25.0",
-    "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.14",
