@@ -100,11 +100,10 @@ function loadMapScript() {
     script.crossOrigin = "anonymous";
     script.onload = () => {
       resolve(null);
-      script.remove(); // Clean up immediately
+      script.remove();
     };
-    script.onerror = () => {
-      console.error("Failed to load Google Maps script");
-    };
+    script.onerror = () => {};
+    
     document.head.appendChild(script);
   });
 }
@@ -127,10 +126,7 @@ export function MapView({
 
   const init = usePersistFn(async () => {
     await loadMapScript();
-    if (!mapContainer.current) {
-      console.error("Map container not found");
-      return;
-    }
+    if (!mapContainer.current) return;
     map.current = new window.google.maps.Map(mapContainer.current, {
       zoom: initialZoom,
       center: initialCenter,
