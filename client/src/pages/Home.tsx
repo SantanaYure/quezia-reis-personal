@@ -247,17 +247,35 @@ export default function Home() {
         </section>
 
         {/* Plans Section */}
-        <section id="planos" className="py-16 md:py-24 bg-[#0b110d]">
+        <section id="planos" className="py-16 md:py-24 bg-[#0b110d] relative overflow-hidden">
+          {/* Black Friday Badge */}
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
+            <div className="bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse">
+              🔥 OFERTA BLACK FRIDAY 🔥
+            </div>
+          </div>
+
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#f0f0d8] text-center mb-12">
-              Escolha seu plano
-            </h2>
+            <div className="text-center mb-6 mt-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#f0f0d8] mb-3">
+                Escolha seu plano
+              </h2>
+              <p className="text-[#ffc2ce] text-lg md:text-xl font-semibold">
+                Preços especiais de Black Friday - Por tempo limitado!
+              </p>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Plan 1 - Trimestral */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col">
+              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                  -30% OFF
+                </div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano trimestral</h3>
-                <p className="text-[#ffc2ce] text-4xl font-bold mb-6">R$ 700</p>
+                <div className="mb-6">
+                  <p className="text-gray-400 text-xl line-through mb-1">De R$ 1.000</p>
+                  <p className="text-[#ffc2ce] text-4xl font-bold">Por R$ 700</p>
+                </div>
                 <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
                   <li className="flex items-center gap-2">
                     <span className="text-[#ffc2ce] font-bold">✓</span> Treino personalizado
@@ -284,11 +302,17 @@ export default function Home() {
 
               {/* Plan 2 - Anual */}
               <article className="bg-[#ffc2ce] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] relative flex flex-col">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                  -50% OFF
+                </div>
                 <div className="absolute top-4 right-4 bg-[#0b110d] text-[#f0f0d8] px-4 py-1 rounded-full text-sm font-bold">
                   Melhor custo-beneficio
                 </div>
                 <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano anual</h3>
-                <p className="text-[#0b110d] text-4xl font-bold mb-6">R$ 1.500</p>
+                <div className="mb-6">
+                  <p className="text-[#0b110d] opacity-60 text-xl line-through mb-1">De R$ 3.000</p>
+                  <p className="text-[#0b110d] text-4xl font-bold">Por R$ 1.500</p>
+                </div>
                 <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
                   <li className="flex items-center gap-2">
                     <span className="font-bold">✓</span> Treino personalizado
