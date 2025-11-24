@@ -113,17 +113,17 @@ export default function Home() {
     <div className="min-h-screen bg-white text-[#0b110d]">
       <header className="bg-[#0b110d] shadow-lg">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-1 font-bold text-2xl">
+          <h1 className="flex items-center gap-1 font-bold text-2xl">
             <span className="text-[#ffc2ce]">QUEZIA</span>
-            <span className="text-[#f0f0d8]">REIS</span>
-          </div>
+            <span className="text-white">REIS</span>
+          </h1>
 
           <div className="hidden md:flex items-center gap-8">
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
+                className="text-white hover:text-[#ffc2ce] transition-colors font-medium"
               >
                 {item.label}
               </button>
@@ -139,7 +139,7 @@ export default function Home() {
           </div>
 
           <button
-            className="md:hidden text-[#f0f0d8]"
+            className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -153,7 +153,7 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
+                className="block w-full text-left text-white hover:text-[#ffc2ce] transition-colors py-2"
               >
                 {item.label}
               </button>
@@ -184,9 +184,9 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="relative z-10 text-center text-white px-4 max-w-2xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Transforme seu corpo e mente
-            </h1>
+            </h2>
             <p className="text-lg md:text-xl mb-8 font-light">
               Com o Método Rica de Saúde: treino personalizado, segurança e eficiência
             </p>
@@ -223,7 +223,7 @@ export default function Home() {
                   key={card.title}
                   className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow"
                 >
-                  <h3 className="text-2xl font-bold text-[#0b110d] mb-3">{card.title}</h3>
+                  <h4 className="text-2xl font-bold text-[#0b110d] mb-3">{card.title}</h4>
                   <p className="text-[#0b110d]">{card.description}</p>
                 </article>
               ))}
@@ -262,7 +262,7 @@ export default function Home() {
 
           <div className="container mx-auto px-4">
             <div className="text-center mb-6 mt-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#f0f0d8] mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 Escolha seu plano
               </h2>
               <p className="text-[#ffc2ce] text-lg md:text-xl font-semibold">
@@ -356,10 +356,10 @@ export default function Home() {
 
         <section className="py-16 md:py-24 bg-[#0b110d]">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#f0f0d8] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Pronto para começar?
             </h2>
-            <p className="text-lg text-[#f0f0d8] mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
               Não espere mais. Seu corpo e mente agradecem. Comece sua transformação com o Método Rica de Saúde.
             </p>
             <a
@@ -374,13 +374,13 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0b110d] text-[#f0f0d8] py-12">
+      <footer className="bg-[#0b110d] text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-1 font-bold text-xl mb-4">
                 <span className="text-[#ffc2ce]">QUEZIA</span>
-                <span className="text-[#f0f0d8]">REIS</span>
+                <span className="text-white">REIS</span>
               </div>
               <p className="text-sm opacity-75">
                 Método Rica de Saúde - Treino Personalizado para Mulheres
@@ -388,7 +388,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Links rápidos</h4>
+              <h3 className="font-bold mb-4">Links rápidos</h3>
               <ul className="space-y-2 text-sm opacity-75">
                 {MENU_ITEMS.slice(0, 3).map((item) => (
                   <li key={item.id}>
@@ -404,7 +404,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Conecte-se</h4>
+              <h3 className="font-bold mb-4">Conecte-se</h3>
               <div className="flex gap-4">
                 <a
                   href="https://www.instagram.com/queziareisrs/"
