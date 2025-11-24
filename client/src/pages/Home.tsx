@@ -27,10 +27,10 @@ const METHOD_CARDS = [
 ];
 
 const TESTIMONIALS = [
-  { id: 1, image: "/depoimento1.jpeg" },
-  { id: 2, image: "/depoimento2.jpeg" },
-  { id: 3, image: "/depoimento3.jpeg" },
-  { id: 4, image: "/depoimento4.jpeg" },
+  { id: 1, image: "/depoimento1.jpeg", alt: "Depoimento de cliente satisfeita com resultados do treino" },
+  { id: 2, image: "/depoimento2.jpeg", alt: "Feedback positivo sobre o método Rica de Saúde" },
+  { id: 3, image: "/depoimento3.jpeg", alt: "Cliente compartilhando sua transformação" },
+  { id: 4, image: "/depoimento4.jpeg", alt: "Relato de experiência com treino personalizado" },
 ];
 
 const PLANS = [
@@ -244,13 +244,15 @@ export default function Home() {
               {TESTIMONIALS.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center"
+                  className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center w-full max-w-[300px]"
                 > 
                   <img
                     src={testimonial.image}
-                    alt={`Depoimento ${testimonial.id}`}
-                    className="rounded-lg max-h-96 w-auto"
+                    alt={testimonial.alt}
+                    className="rounded-lg max-h-96 w-full h-auto object-cover"
                     loading="lazy"
+                    width="300"
+                    height="400"
                   />
                 </div>
               ))}
