@@ -45,7 +45,7 @@ const PLANS = [
       "Acompanhamento WhatsApp",
       "3 encontros online",
     ],
-    message: "Gostaria%20de%20contratar%20o%20plano%20trimestral",
+    paymentLink: "https://mpago.li/2K7Gb9S",
     bgColor: "bg-white",
     textColor: "text-[#0b110d]",
     buttonColor: "bg-[#ffc2ce] text-[#0b110d]",
@@ -63,7 +63,7 @@ const PLANS = [
       "Mini band inclusa",
       "Ebook digital exclusivo",
     ],
-    message: "Gostaria%20de%20contratar%20o%20plano%20anual",
+    paymentLink: "https://mpago.la/1NRFg84",
     bgColor: "bg-[#ffc2ce]",
     textColor: "text-[#0b110d]",
     buttonColor: "bg-[#0b110d] text-[#f0f0d8]",
@@ -299,7 +299,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <a
-                    href={`${WHATSAPP_URL}?text=${plan.message}`}
+                    href={plan.paymentLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full ${plan.buttonColor} py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto`}
