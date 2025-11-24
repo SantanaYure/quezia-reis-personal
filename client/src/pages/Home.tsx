@@ -209,7 +209,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] mb-4">
                 Método Exclusivo Rica de Saúde
               </h2>
-              <p className="text-lg text-[#0b110d] max-w-2xl mx-auto">
+              <p className="text-lg text-[#0b110d] max-w-3xl mx-auto">
                 Criadora do Método Rica de Saúde, focado em treino personalizado, segurança e eficiência.
               </p>
             </div>
