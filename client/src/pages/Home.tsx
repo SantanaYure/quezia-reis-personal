@@ -190,14 +190,12 @@ export default function Home() {
             <p className="text-lg md:text-xl mb-8 font-light">
               Com o Método Rica de Saúde: treino personalizado, segurança e eficiência
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all"
+            <button
+              onClick={() => scrollToSection("planos")}
+              className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all cursor-pointer"
             >
               Comece agora
-            </a>
+            </button>
           </div>
         </section>
 
