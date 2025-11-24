@@ -245,7 +245,7 @@ export default function Home() {
                 <div
                   key={testimonial.id}
                   className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center"
-                >
+                > 
                   <img
                     src={testimonial.image}
                     alt={`Depoimento ${testimonial.id}`}
