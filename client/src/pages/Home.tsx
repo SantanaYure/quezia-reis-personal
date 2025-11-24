@@ -1,57 +1,120 @@
 import { useState } from "react";
-import { Menu, X, Instagram, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+
+const PHONE_NUMBER = "5571988895613";
+const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
+
+const MENU_ITEMS = [
+  { id: "metodo", label: "Método" },
+  { id: "depoimentos", label: "Depoimentos" },
+  { id: "planos", label: "Planos" },
+  { id: "sobre", label: "Sobre" },
+];
+
+const METHOD_CARDS = [
+  {
+    title: "Treino personalizado",
+    description: "Cada treino é adaptado ao seu corpo, rotina e objetivos. Sem genéricos, sem desperdício de tempo.",
+  },
+  {
+    title: "Segurança em primeiro lugar",
+    description: "Técnica refinada e acompanhamento constante para evitar lesões e garantir resultados duradouros.",
+  },
+  {
+    title: "Eficiência garantida",
+    description: "Máximo resultado no menor tempo possível. Planejamento que se encaixa na sua vida real.",
+  },
+];
+
+const TESTIMONIALS = [
+  { id: 1, image: "/depoimento1.jpeg" },
+  { id: 2, image: "/depoimento2.jpeg" },
+  { id: 3, image: "/depoimento3.jpeg" },
+  { id: 4, image: "/depoimento4.jpeg" },
+];
+
+const PLANS = [
+  {
+    name: "Plano trimestral",
+    discount: "-30% OFF",
+    oldPrice: "R$ 1.000",
+    price: "R$ 700",
+    features: [
+      "Treino personalizado",
+      "Assinatura Prime Gourmet",
+      "Acompanhamento WhatsApp",
+      "3 encontros online",
+    ],
+    message: "Gostaria%20de%20contratar%20o%20plano%20trimestral",
+    bgColor: "bg-white",
+    textColor: "text-[#0b110d]",
+    buttonColor: "bg-[#ffc2ce] text-[#0b110d]",
+  },
+  {
+    name: "Plano anual",
+    discount: "-50% OFF",
+    oldPrice: "R$ 3.000",
+    price: "R$ 1.500",
+    features: [
+      "Treino personalizado",
+      "Assinatura Prime Gourmet",
+      "Acompanhamento WhatsApp",
+      "20 encontros online (videochamada)",
+      "Mini band inclusa",
+      "Ebook digital exclusivo",
+    ],
+    message: "Gostaria%20de%20contratar%20o%20plano%20anual",
+    bgColor: "bg-[#ffc2ce]",
+    textColor: "text-[#0b110d]",
+    buttonColor: "bg-[#0b110d] text-[#f0f0d8]",
+    badge: "Melhor custo-beneficio",
+  },
+];
+
+const ABOUT_SECTIONS = [
+  {
+    title: "Mãe e profissional",
+    description: "Vive na prática o malabarismo entre casa, filhos e trabalho, trazendo soluções reais para mulheres reais.",
+  },
+  {
+    title: "Especialista em você",
+    description: "Bacharel em Educação Física com Especialização em Saúde da Mulher.",
+  },
+  {
+    title: "Formação de elite",
+    description: "Base técnica refinada pela Dança (Byla Dança), Pilates e certificação internacional NASM (National Academy of Sports Medicine).",
+  },
+];
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-white text-[#0b110d]">
-      {/* Header */}
       <header className="sticky top-0 z-50 bg-[#0b110d] shadow-lg">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center gap-1 font-bold text-2xl">
             <span className="text-[#ffc2ce]">QUEZIA</span>
             <span className="text-[#f0f0d8]">REIS</span>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("metodo")}
-              className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
-            >
-              Método
-            </button>
-            <button
-              onClick={() => scrollToSection("depoimentos")}
-              className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
-            >
-              Depoimentos
-            </button>
-            <button
-              onClick={() => scrollToSection("planos")}
-              className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
-            >
-              Planos
-            </button>
-            <button
-              onClick={() => scrollToSection("sobre")}
-              className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
-            >
-              Sobre
-            </button>
+            {MENU_ITEMS.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
             <a
-              href="https://wa.me/5571991408574"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
@@ -60,7 +123,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-[#f0f0d8]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -70,35 +132,19 @@ export default function Home() {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#0b110d] px-4 py-4 space-y-3">
-            <button
-              onClick={() => scrollToSection("metodo")}
-              className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
-            >
-              Método
-            </button>
-            <button
-              onClick={() => scrollToSection("depoimentos")}
-              className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
-            >
-              Depoimentos
-            </button>
-            <button
-              onClick={() => scrollToSection("planos")}
-              className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
-            >
-              Planos
-            </button>
-            <button
-              onClick={() => scrollToSection("sobre")}
-              className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
-            >
-              Sobre
-            </button>
+            {MENU_ITEMS.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left text-[#f0f0d8] hover:text-[#ffc2ce] transition-colors font-medium py-2"
+              >
+                {item.label}
+              </button>
+            ))}
             <a
-              href="https://wa.me/5571991408574"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-lg font-semibold text-center hover:bg-opacity-90 transition-all"
@@ -110,7 +156,6 @@ export default function Home() {
       </header>
 
       <main>
-        {/* Hero Section */}
         <section className="relative h-screen min-h-[500px] bg-cover bg-center flex items-center justify-center overflow-hidden">
           <img
             src="/quezia-about.png"
@@ -126,7 +171,7 @@ export default function Home() {
               Com o Método Rica de Saúde: treino personalizado, segurança e eficiência
             </p>
             <a
-              href="https://wa.me/5571991408574"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all"
@@ -136,7 +181,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Método Section */}
         <section id="metodo" className="py-16 md:py-24 bg-[#f0f0d8]">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -155,70 +199,45 @@ export default function Home() {
               <p className="text-right text-[#0b110d] mt-4 font-semibold">— Quezia Reis</p>
             </div>
 
-            {/* Method Cards */}
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Card 1 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-4xl mb-4">🎯</div>
-                <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Treino personalizado</h3>
-                <p className="text-[#0b110d]">
-                  Cada treino é adaptado ao seu corpo, rotina e objetivos. Sem genéricos, sem desperdício de tempo.
-                </p>
-              </article>
-
-              {/* Card 2 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-4xl mb-4">🛡️</div>
-                <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Segurança em primeiro lugar</h3>
-                <p className="text-[#0b110d]">
-                  Técnica refinada e acompanhamento constante para evitar lesões e garantir resultados duradouros.
-                </p>
-              </article>
-
-              {/* Card 3 */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-2xl font-bold text-[#0b110d] mb-3">Eficiência garantida</h3>
-                <p className="text-[#0b110d]">
-                  Máximo resultado no menor tempo possível. Planejamento que se encaixa na sua vida real.
-                </p>
-              </article>
+              {METHOD_CARDS.map((card) => (
+                <article
+                  key={card.title}
+                  className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <h3 className="text-2xl font-bold text-[#0b110d] mb-3">{card.title}</h3>
+                  <p className="text-[#0b110d]">{card.description}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <section id="depoimentos" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] text-center mb-12">
               Depoimentos
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
-              {/* Print 1 */}
-              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
-                <img src="/depoimento1.jpeg" alt="Depoimento 1" className="rounded-lg max-h-96 w-auto" />
-              </div>
-              {/* Print 2 */}
-              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
-                <img src="/depoimento2.jpeg" alt="Depoimento 2" className="rounded-lg max-h-96 w-auto" />
-              </div>
-              {/* Print 3 */}
-              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
-                <img src="/depoimento3.jpeg" alt="Depoimento 3" className="rounded-lg max-h-96 w-auto" />
-              </div>
-              {/* Print 4 */}
-              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
-                <img src="/depoimento4.jpeg" alt="Depoimento 4" className="rounded-lg max-h-96 w-auto" />
-              </div>
+              {TESTIMONIALS.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center"
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={`Depoimento ${testimonial.id}`}
+                    className="rounded-lg max-h-96 w-auto"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Plans Section */}
         <section id="planos" className="py-16 md:py-24 bg-[#0b110d] relative overflow-hidden">
-          {/* Black Friday Badge */}
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
-            <div className="bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse">
+          <div className="absolute top-4 md:top-8 left-1/2 -translate-x-1/2 z-10 w-[90%] md:w-auto flex justify-center">
+            <div className="bg-[#ffc2ce] text-[#0b110d] px-4 md:px-6 py-2 rounded-full font-bold text-xs md:text-base shadow-lg animate-pulse whitespace-nowrap">
               🔥 OFERTA BLACK FRIDAY 🔥
             </div>
           </div>
@@ -234,91 +253,48 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Plan 1 - Trimestral */}
-              <article className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
-                  -30% OFF
-                </div>
-                <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano trimestral</h3>
-                <div className="mb-6">
-                  <p className="text-gray-400 text-xl line-through mb-1">De R$ 1.000</p>
-                  <p className="text-[#ffc2ce] text-4xl font-bold">Por R$ 700</p>
-                </div>
-                <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> Treino personalizado
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> Assinatura Prime Gourmet
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> Acompanhamento WhatsApp
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> 3 encontros online
-                  </li>
-                </ul>
-                <a
-                  href="https://wa.me/5571991408574?text=Gostaria%20de%20contratar%20o%20plano%20trimestral"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-[#ffc2ce] text-[#0b110d] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto"
+              {PLANS.slice().reverse().map((plan, index) => (
+                <article
+                  key={plan.name}
+                  className={`${plan.bgColor} rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col relative md:order-${index === 0 ? '2' : '1'}`}
                 >
-                  Contratar agora
-                </a>
-              </article>
-
-              {/* Plan 2 - Anual */}
-              <article className="bg-[#ffc2ce] rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] relative flex flex-col">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
-                  -50% OFF
-                </div>
-                <div className="absolute top-4 right-4 bg-[#0b110d] text-[#f0f0d8] px-4 py-1 rounded-full text-sm font-bold">
-                  Melhor custo-beneficio
-                </div>
-                <h3 className="text-2xl font-bold text-[#0b110d] mb-2">Plano anual</h3>
-                <div className="mb-6">
-                  <p className="text-[#0b110d] opacity-60 text-xl line-through mb-1">De R$ 3.000</p>
-                  <p className="text-[#0b110d] text-4xl font-bold">Por R$ 1.500</p>
-                </div>
-                <ul className="space-y-3 mb-8 text-[#0b110d] flex-grow">
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Treino personalizado
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Assinatura Prime Gourmet
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Acompanhamento WhatsApp
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> 20 encontros online (videochamada)
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Mini band inclusa
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Ebook digital exclusivo
-                  </li>
-                </ul>
-                <a
-                  href="https://wa.me/5571991408574?text=Gostaria%20de%20contratar%20o%20plano%20anual"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-[#0b110d] text-[#f0f0d8] py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto"
-                >
-                  Contratar agora
-                </a>
-              </article>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                    {plan.discount}
+                  </div>
+                  {plan.badge && (
+                    <div className="absolute top-4 right-4 bg-[#0b110d] text-[#f0f0d8] px-4 py-1 rounded-full text-sm font-bold">
+                      {plan.badge}
+                    </div>
+                  )}
+                  <h3 className={`text-2xl font-bold ${plan.textColor} mb-2`}>{plan.name}</h3>
+                  <div className="mb-6">
+                    <p className={`${plan.textColor} opacity-60 text-xl line-through mb-1`}>De {plan.oldPrice}</p>
+                    <p className={`${plan.textColor} text-4xl font-bold`}>Por {plan.price}</p>
+                  </div>
+                  <ul className={`space-y-3 mb-8 ${plan.textColor} flex-grow`}>
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <span className="font-bold">✓</span> {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={`${WHATSAPP_URL}?text=${plan.message}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full ${plan.buttonColor} py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto`}
+                  >
+                    Contratar agora
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* About Section */}
         <section id="sobre" className="py-16 md:py-24 bg-[#f0f0d8]">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Image */}
               <div className="order-2 md:order-1">
                 <img
                   src="/quezia-hero.jpg"
@@ -327,7 +303,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Content */}
               <article className="order-1 md:order-2">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] mb-6">
                   Conheça sua treinadora
@@ -340,30 +315,16 @@ export default function Home() {
                 </p>
 
                 <div className="space-y-4 text-[#0b110d]">
-                  <div>
-                    <h4 className="font-bold text-[#ffc2ce] mb-1">Mãe e profissional</h4>
-                    <p>
-                      Vive na prática o malabarismo entre casa, filhos e trabalho, trazendo soluções reais para mulheres reais.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-[#ffc2ce] mb-1">Especialista em você</h4>
-                    <p>
-                      Bacharel em Educação Física com Especialização em Saúde da Mulher.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-[#ffc2ce] mb-1">Formação de elite</h4>
-                    <p>
-                      Base técnica refinada pela Dança (Byla Dança), Pilates e certificação internacional NASM (National Academy of Sports Medicine).
-                    </p>
-                  </div>
+                  {ABOUT_SECTIONS.map((section) => (
+                    <div key={section.title}>
+                      <h4 className="font-bold text-[#ffc2ce] mb-1">{section.title}</h4>
+                      <p>{section.description}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <a
-                  href="https://wa.me/+5571988895613"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-8 bg-[#ffc2ce] text-[#0b110d] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
@@ -375,7 +336,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-16 md:py-24 bg-[#0b110d]">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#f0f0d8] mb-6">
@@ -385,7 +345,7 @@ export default function Home() {
               Não espere mais. Seu corpo e mente agradecem. Comece sua transformação com o Método Rica de Saúde.
             </p>
             <a
-              href="https://wa.me/5571988895613"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all"
@@ -396,11 +356,9 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-[#0b110d] text-[#f0f0d8] py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {/* Brand */}
             <div>
               <div className="flex items-center gap-1 font-bold text-xl mb-4">
                 <span className="text-[#ffc2ce]">QUEZIA</span>
@@ -411,84 +369,57 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Links */}
             <div>
               <h4 className="font-bold mb-4">Links rápidos</h4>
               <ul className="space-y-2 text-sm opacity-75">
-                <li>
-                  <button
-                    onClick={() => scrollToSection("metodo")}
-                    className="hover:text-[#ffc2ce] transition-colors"
-                  >
-                    Método
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("planos")}
-                    className="hover:text-[#ffc2ce] transition-colors"
-                  >
-                    Planos
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("sobre")}
-                    className="hover:text-[#ffc2ce] transition-colors"
-                  >
-                    Sobre
-                  </button>
-                </li>
+                {MENU_ITEMS.slice(0, 3).map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="hover:text-[#ffc2ce] transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Social */}
             <div>
               <h4 className="font-bold mb-4">Conecte-se</h4>
               <div className="flex gap-4">
                 <a
-                    href="https://www.instagram.com/queziareisrs/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#ffc2ce] transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
-                      alt="Instagram logo"
-                      width={24}
-                      height={24}
-                      style={{ display: "inline-block" }}
-                    />
+                  href="https://www.instagram.com/queziareisrs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="Instagram"
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                    alt="Instagram"
+                    width={24}
+                    height={24}
+                  />
                 </a>
                 <a
-                    href="https://wa.me/5571988895613"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#ffc2ce] transition-colors"
-                    aria-label="WhatsApp"
-                  >
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-                      alt="WhatsApp logo"
-                      width={24}
-                      height={24}
-                      style={{ display: "inline-block" }}
-                    />
-                </a>
-              </div>
-              <div className="text-xs mt-2 opacity-60">
-                <a href="https://www.flaticon.com/free-icons/instagram-logo" title="instagram logo icons" target="_blank" rel="noopener noreferrer">
-
-                </a>
-                <br />
-                <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons" target="_blank" rel="noopener noreferrer">
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="WhatsApp"
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                    alt="WhatsApp"
+                    width={24}
+                    height={24}
+                  />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Bottom */}
           <div className="border-t border-gray-700 pt-8 text-center text-sm opacity-75">
             <p className="mb-2">
               © 2025 Quezia Reis Personal Trainer. Todos os direitos reservados.
