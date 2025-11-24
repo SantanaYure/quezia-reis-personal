@@ -191,57 +191,25 @@ export default function Home() {
         <section id="depoimentos" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] text-center mb-12">
-              O que minhas alunas dizem
+              Depoimentos
             </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Testimonial 1 */}
-              <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    R
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#0b110d]">Renilda</p>
-                  </div>
-                </div>
-                <p className="text-[#0b110d] italic">
-                  "Eliminei 9 quilos, não sinto mais dores na coluna e estou passando pelo climatério de uma forma muito mais tranquila do que antes. Obrigada."
-                </p>
-                <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
-              </article>
-
-              {/* Testimonial 2 */}
-              <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    C
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#0b110d]">Carla</p>
-                  </div>
-                </div>
-                <p className="text-[#0b110d] italic">
-                  "Fiz minha última quimio na sexta. Correu tudo bem. Muito feliz pelo processo ter sido tão leve pra mim, e você foi muito importante nesse processo, com os exercícios, apoio, incentivo, atenção e preocupação. Muito obrigada. E vamos que vamos para a próxima etapa."
-                </p>
-                <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
-              </article>
-
-              {/* Testimonial 3 */}
-              <article className="bg-[#f0f0d8] rounded-lg p-8 shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-[#ffc2ce] rounded-full mr-4 flex items-center justify-center font-bold text-[#0b110d]">
-                    EF
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#0b110d]">Elaine Fraga</p>
-                  </div>
-                </div>
-                <p className="text-[#0b110d] italic">
-                  "Quel, melhor profissional que já conheci. Os treinos são maravilhosos e seguem o objetivo de cada pessoa. Tudo é personalizado em um aplicativo didático e simples, com muitos vídeos para cada exercício, o que ajuda a tirar dúvidas com facilidade. Faço online, mas o acompanhamento parece presencial. Ela realmente acompanha, responde, orienta e cobra. Tirei minhas dúvidas e tive ótimos resultados com a Quel. Estou amando."
-                </p>
-                <div className="flex mt-4 text-[#ffc2ce]">★★★★★</div>
-              </article>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+              {/* Print 1 */}
+              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
+                <img src="/depoimento1.jpeg" alt="Depoimento 1" className="rounded-lg max-h-96 w-auto" />
+              </div>
+              {/* Print 2 */}
+              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
+                <img src="/depoimento2.jpeg" alt="Depoimento 2" className="rounded-lg max-h-96 w-auto" />
+              </div>
+              {/* Print 3 */}
+              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
+                <img src="/depoimento3.jpeg" alt="Depoimento 3" className="rounded-lg max-h-96 w-auto" />
+              </div>
+              {/* Print 4 */}
+              <div className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center">
+                <img src="/depoimento4.jpeg" alt="Depoimento 4" className="rounded-lg max-h-96 w-auto" />
+              </div>
             </div>
           </div>
         </section>
