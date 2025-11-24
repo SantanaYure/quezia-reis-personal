@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn-icons-png.flaticon.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://mpago.li https://mpago.la https://wa.me; frame-src https://mpago.li https://mpago.la; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://mpago.li https://mpago.la https://wa.me; frame-src https://mpago.li https://mpago.la; base-uri 'self'; form-action 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
@@ -14,6 +14,11 @@
     
     <link rel="icon" type="image/png" href="%VITE_APP_LOGO%" />
     <link rel="apple-touch-icon" href="%VITE_APP_LOGO%" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/quezia-about-mobile.png" as="image" media="(max-width: 768px)" />
+    <link rel="preload" href="/quezia-about.png" as="image" media="(min-width: 769px)" />
+    <link rel="preload" href="/fonts.css" as="style" />
     
     <!-- SEO Meta Tags -->
     <title>Quezia Reis Personal Trainer - Treino Personalizado para Mulheres</title>
@@ -34,10 +39,26 @@
     <meta name="twitter:title" content="Quezia Reis Personal Trainer" />
     <meta name="twitter:description" content="Treino personalizado com o Método Rica de Saúde" />
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Preload crítico -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      /* Critical fonts inline */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2) format('woff2');
+      }
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+      }
+    </style>
   </head>
 
   <body>
