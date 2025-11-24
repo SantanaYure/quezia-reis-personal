@@ -281,13 +281,13 @@ export default function Home() {
                     <span className="text-[#ffc2ce] font-bold">✓</span> Treino personalizado
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> Assinatura Prime
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-[#ffc2ce] font-bold">✓</span> 3 encontros online
+                    <span className="text-[#ffc2ce] font-bold">✓</span> Assinatura Prime Gourmet
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#ffc2ce] font-bold">✓</span> Acompanhamento WhatsApp
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#ffc2ce] font-bold">✓</span> 3 encontros online
                   </li>
                 </ul>
                 <a
@@ -321,13 +321,13 @@ export default function Home() {
                     <span className="font-bold">✓</span> Assinatura Prime Gourmet
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Mini band inclusa
+                    <span className="font-bold">✓</span> Acompanhamento WhatsApp
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="font-bold">✓</span> 20 encontros online (videochamada)
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="font-bold">✓</span> Acompanhamento WhatsApp
+                    <span className="font-bold">✓</span> Mini band inclusa
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="font-bold">✓</span> Ebook digital exclusivo
@@ -395,7 +395,7 @@ export default function Home() {
                 </div>
 
                 <a
-                  href="https://wa.me/5571991408574"
+                  href="https://wa.me/+5571988895613"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-8 bg-[#ffc2ce] text-[#0b110d] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
@@ -417,7 +417,7 @@ export default function Home() {
               Não espere mais. Seu corpo e mente agradecem. Comece sua transformação com o Método Rica de Saúde.
             </p>
             <a
-              href="https://wa.me/5571991408574"
+              href="https://wa.me/5571988895613"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all"
@@ -479,22 +479,42 @@ export default function Home() {
               <h4 className="font-bold mb-4">Conecte-se</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#ffc2ce] transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={24} />
+                    href="https://www.instagram.com/queziareisrs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#ffc2ce] transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                      alt="Instagram logo"
+                      width={24}
+                      height={24}
+                      style={{ display: "inline-block" }}
+                    />
                 </a>
                 <a
-                  href="https://wa.me/5571991408574"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#ffc2ce] transition-colors"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle size={24} />
+                    href="https://wa.me/5571988895613"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#ffc2ce] transition-colors"
+                    aria-label="WhatsApp"
+                  >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                      alt="WhatsApp logo"
+                      width={24}
+                      height={24}
+                      style={{ display: "inline-block" }}
+                    />
+                </a>
+              </div>
+              <div className="text-xs mt-2 opacity-60">
+                <a href="https://www.flaticon.com/free-icons/instagram-logo" title="instagram logo icons" target="_blank" rel="noopener noreferrer">
+
+                </a>
+                <br />
+                <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons" target="_blank" rel="noopener noreferrer">
                 </a>
               </div>
             </div>
@@ -508,7 +528,7 @@ export default function Home() {
             <p>
               Desenvolvido por{" "}
               <a
-                href="https://wa.me/5571991408574"
+                href="https://meu-portfolio-25xr9d90s-santanayures-projects.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#ffc2ce] transition-colors font-semibold"
