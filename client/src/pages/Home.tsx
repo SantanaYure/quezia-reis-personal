@@ -1,28 +1,31 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Diamond, Award, Shield, Sparkles, Crown, Star } from "lucide-react";
 
 const PHONE_NUMBER = "5571988895613";
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
 
 const MENU_ITEMS = [
   { id: "metodo", label: "Método" },
-  { id: "depoimentos", label: "Depoimentos" },
-  { id: "planos", label: "Planos" },
+  { id: "depoimentos", label: "Resultados" },
+  { id: "planos", label: "Exclusividade" },
   { id: "sobre", label: "Sobre" },
 ];
 
 const METHOD_CARDS = [
   {
-    title: "Treino personalizado",
-    description: "Cada treino é adaptado ao seu corpo, rotina e objetivos. Sem genéricos, sem desperdício de tempo.",
+    icon: Diamond,
+    title: "Treino Exclusivo",
+    description: "Cada protocolo é meticulosamente desenhado para seu biótipo, rotina e aspirações. Experiência única e personalizada.",
   },
   {
-    title: "Segurança em primeiro lugar",
-    description: "Técnica refinada e acompanhamento constante para evitar lesões e garantir resultados duradouros.",
+    icon: Shield,
+    title: "Excelência & Segurança",
+    description: "Técnica refinada com acompanhamento premium para resultados duradouros e saúde impecável.",
   },
   {
-    title: "Eficiência garantida",
-    description: "Máximo resultado no menor tempo possível. Planejamento que se encaixa na sua vida real.",
+    icon: Award,
+    title: "Resultados de Elite",
+    description: "Máxima eficiência com planejamento estratégico que respeita seu tempo e supera suas expectativas.",
   },
 ];
 
@@ -35,60 +38,62 @@ const TESTIMONIALS = [
 
 const PLANS = [
   {
-    name: "Plano trimestral",
-    discount: "-30% OFF",
+    name: "Signature",
+    subtitle: "Trimestral",
+    discount: "30% OFF",
     oldPrice: "R$ 1.000",
     price: "R$ 700",
     features: [
-      "Treino personalizado",
+      "Protocolo de treino exclusivo",
       "Assinatura Prime Gourmet",
-      "Acompanhamento WhatsApp",
-      "3 encontros online",
+      "Suporte prioritário via WhatsApp",
+      "3 sessões de consultoria online",
     ],
     paymentLink: "https://mpago.li/2K7Gb9S",
-    bgColor: "bg-white",
-    textColor: "text-[#0b110d]",
-    buttonColor: "bg-[#ffc2ce] text-[#0b110d]",
+    featured: false,
   },
   {
-    name: "Plano anual",
-    discount: "-50% OFF",
+    name: "Prestige",
+    subtitle: "Anual",
+    discount: "50% OFF",
     oldPrice: "R$ 3.000",
     price: "R$ 1.500",
     features: [
-      "Treino personalizado",
+      "Protocolo de treino exclusivo",
       "Assinatura Prime Gourmet",
-      "Acompanhamento WhatsApp",
-      "20 encontros online (videochamada)",
-      "Mini band inclusa",
+      "Suporte VIP via WhatsApp",
+      "20 sessões de consultoria em vídeo",
+      "Kit premium com mini band",
       "Ebook digital exclusivo",
     ],
     paymentLink: "https://mpago.la/1NRFg84",
-    bgColor: "bg-[#ffc2ce]",
-    textColor: "text-[#0b110d]",
-    buttonColor: "bg-[#0b110d] text-[#f0f0d8]",
-    badge: "Melhor custo-beneficio",
+    featured: true,
+    badge: "Mais Escolhido",
   },
 ];
 
 const ABOUT_SECTIONS = [
   {
-    title: "Mãe e profissional",
-    description: "Vive na prática o malabarismo entre casa, filhos e trabalho, trazendo soluções reais para mulheres reais.",
+    icon: Crown,
+    title: "Lifestyle & Equilíbrio",
+    description: "Compreende na prática a arte de equilibrar família, carreira e bem-estar, oferecendo soluções reais para mulheres que exigem excelência.",
   },
   {
-    title: "Especialista em você",
-    description: "Bacharel em Educação Física com Especialização em Saúde da Mulher.",
+    icon: Award,
+    title: "Especialização Premium",
+    description: "Bacharel em Educação Física com Especialização em Saúde da Mulher e certificação internacional NASM.",
   },
   {
-    title: "Formação de elite",
-    description: "Base técnica refinada pela Dança (Byla Dança), Pilates e certificação internacional NASM (National Academy of Sports Medicine).",
+    icon: Star,
+    title: "Formação de Elite",
+    description: "Background refinado em Dança (Byla Dança) e Pilates, combinando arte, ciência e técnica em cada protocolo.",
   },
 ];
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -103,6 +108,7 @@ export default function Home() {
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       setShowScrollTop(window.scrollY > heroHeight);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -110,20 +116,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#0b110d]">
-      <header className="bg-[#0b110d] shadow-lg">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="flex items-center gap-1 font-bold text-2xl">
-            <span className="text-[#ffc2ce]">QUEZIA</span>
+    <div className="min-h-screen bg-[#0a0a0a] text-white font-light">
+      {/* Header Premium */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'}`}>
+        <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+          <h1 className="flex items-center gap-2 text-2xl tracking-[0.2em] font-light">
+            <span className="text-[#c9a962]">QUEZIA</span>
             <span className="text-white">REIS</span>
           </h1>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-12">
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-white hover:text-[#ffc2ce] transition-colors font-medium"
+                className="text-white/80 hover:text-[#c9a962] transition-all duration-300 text-sm tracking-[0.15em] uppercase font-light"
               >
                 {item.label}
               </button>
@@ -132,14 +139,14 @@ export default function Home() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+              className="border border-[#c9a962] text-[#c9a962] px-8 py-3 text-sm tracking-[0.15em] uppercase hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300"
             >
-              Contato
+              Agendar
             </a>
           </div>
 
           <button
-            className="md:hidden text-white"
+            className="lg:hidden text-[#c9a962]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -148,12 +155,12 @@ export default function Home() {
         </nav>
 
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0b110d] px-4 py-4 space-y-3">
+          <div className="lg:hidden bg-[#0a0a0a]/98 backdrop-blur-md px-6 py-8 space-y-6 border-t border-[#c9a962]/20">
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-white hover:text-[#ffc2ce] transition-colors py-2"
+                className="block w-full text-left text-white/80 hover:text-[#c9a962] transition-colors py-2 text-sm tracking-[0.15em] uppercase"
               >
                 {item.label}
               </button>
@@ -162,154 +169,228 @@ export default function Home() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-[#ffc2ce] text-[#0b110d] px-6 py-2 rounded-lg font-semibold text-center hover:bg-opacity-90 transition-all"
+              className="block w-full border border-[#c9a962] text-[#c9a962] px-8 py-3 text-sm tracking-[0.15em] uppercase text-center hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300"
             >
-              Contato
+              Agendar
             </a>
           </div>
         )}
       </header>
 
       <main>
-        <section className="relative h-screen min-h-[500px] bg-cover bg-center flex items-center justify-center overflow-hidden">
+        {/* Hero Section - Full Screen Luxury */}
+        <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
           <img
             src="/quezia-about-mobile.png"
-            alt="Quezia Reis Personal Trainer em ação"
+            alt="Quezia Reis Personal Trainer"
             className="absolute inset-0 w-full h-full object-cover md:hidden"
             loading="eager"
             fetchPriority="high"
           />
           <img
             src="/quezia-about.png"
-            alt="Quezia Reis Personal Trainer em ação"
+            alt="Quezia Reis Personal Trainer"
             className="absolute inset-0 w-full h-full object-cover hidden md:block"
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
-          <div className="relative z-10 text-center text-white px-4 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Transforme seu corpo e mente
+          
+          {/* Luxury Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/40 to-[#0a0a0a]"></div>
+          
+          {/* Gold accent lines */}
+          <div className="absolute top-0 left-0 w-px h-32 bg-gradient-to-b from-[#c9a962] to-transparent ml-8 md:ml-16 mt-24"></div>
+          <div className="absolute top-0 right-0 w-px h-32 bg-gradient-to-b from-[#c9a962] to-transparent mr-8 md:mr-16 mt-24"></div>
+          
+          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div className="mb-8">
+              <Sparkles className="w-8 h-8 text-[#c9a962] mx-auto mb-6" />
+              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Método Rica de Saúde</p>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-wide">
+              Transformação
+              <span className="block text-[#c9a962] italic font-extralight">Exclusiva</span>
             </h2>
-            <p className="text-lg md:text-xl mb-8 font-light">
-              Com o Método Rica de Saúde: treino personalizado, segurança e eficiência
+            
+            <p className="text-lg md:text-xl text-white/70 mb-12 font-extralight tracking-wide max-w-2xl mx-auto leading-relaxed">
+              Treino personalizado de alto padrão para mulheres que buscam excelência em cada aspecto da vida
             </p>
-            <button
-              onClick={() => scrollToSection("planos")}
-              className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all cursor-pointer"
-            >
-              Comece agora
-            </button>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button
+                onClick={() => scrollToSection("planos")}
+                className="bg-[#c9a962] text-[#0a0a0a] px-12 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#d4b872] transition-all duration-300"
+              >
+                Conhecer Planos
+              </button>
+              <button
+                onClick={() => scrollToSection("metodo")}
+                className="border border-white/30 text-white px-12 py-4 text-sm tracking-[0.2em] uppercase hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300"
+              >
+                Saiba Mais
+              </button>
+            </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+            <span className="text-[#c9a962]/60 text-xs tracking-[0.2em] uppercase">Scroll</span>
+            <div className="w-px h-12 bg-gradient-to-b from-[#c9a962]/60 to-transparent"></div>
           </div>
         </section>
 
-        <section id="metodo" className="py-16 md:py-24 bg-[#f0f0d8]">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] mb-4">
-                Método Exclusivo Rica de Saúde
+        {/* Method Section - Premium Cards */}
+        <section id="metodo" className="py-24 md:py-32 bg-[#0a0a0a]">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="text-center mb-20">
+              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Exclusividade</p>
+              <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
+                Método <span className="text-[#c9a962] italic">Rica de Saúde</span>
               </h2>
-              <p className="text-lg text-[#0b110d] max-w-3xl mx-auto">
-                Criadora do Método Rica de Saúde, focado em treino personalizado, segurança e eficiência.
+              <div className="w-24 h-px bg-[#c9a962] mx-auto mb-8"></div>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto font-extralight leading-relaxed">
+                Um protocolo desenvolvido para mulheres que não aceitam menos que a excelência
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 mb-12">
-              <p className="text-xl text-[#0b110d] italic font-semibold">
-                "Minha meta é que você tenha constância e resultados, com um planejamento que funciona de verdade no seu dia a dia."
+            {/* Premium Quote */}
+            <div className="relative max-w-4xl mx-auto mb-20 p-12 border border-[#c9a962]/20">
+              <div className="absolute -top-4 left-8 bg-[#0a0a0a] px-4">
+                <span className="text-[#c9a962] text-4xl">"</span>
+              </div>
+              <p className="text-xl md:text-2xl text-white/80 italic font-extralight leading-relaxed text-center">
+                Minha meta é que você tenha constância e resultados, com um planejamento que funciona de verdade no seu dia a dia.
               </p>
-              <p className="text-right text-[#0b110d] mt-4 font-semibold">— Quezia Reis</p>
+              <p className="text-[#c9a962] mt-8 text-center tracking-[0.2em] text-sm">— QUEZIA REIS</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
               {METHOD_CARDS.map((card) => (
                 <article
                   key={card.title}
-                  className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow"
+                  className="group p-10 bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-[#1a1a1a] hover:border-[#c9a962]/40 transition-all duration-500"
                 >
-                  <h4 className="text-2xl font-bold text-[#0b110d] mb-3">{card.title}</h4>
-                  <p className="text-[#0b110d]">{card.description}</p>
+                  <card.icon className="w-10 h-10 text-[#c9a962] mb-8 group-hover:scale-110 transition-transform duration-300" />
+                  <h4 className="text-xl font-light text-white mb-4 tracking-wide">{card.title}</h4>
+                  <p className="text-white/50 font-extralight leading-relaxed">{card.description}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="depoimentos" className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] text-center mb-12">
-              Depoimentos
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+        {/* Testimonials Section - Gallery Style */}
+        <section id="depoimentos" className="py-24 md:py-32 bg-[#080808]">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="text-center mb-20">
+              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Resultados Reais</p>
+              <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
+                Histórias de <span className="text-[#c9a962] italic">Sucesso</span>
+              </h2>
+              <div className="w-24 h-px bg-[#c9a962] mx-auto"></div>
+            </div>
+            
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {TESTIMONIALS.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-white rounded-xl shadow-lg border border-[#ffc2ce] p-2 flex items-center justify-center w-full max-w-[300px]"
+                  className="group relative overflow-hidden bg-[#111] aspect-[3/4]"
                 > 
                   <img
                     src={testimonial.image}
                     alt={testimonial.alt}
-                    className="rounded-lg max-h-96 w-full h-auto object-cover"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     loading="lazy"
                     width="300"
                     height="400"
                   />
+                  <div className="absolute inset-0 border border-[#c9a962]/0 group-hover:border-[#c9a962]/40 transition-all duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="planos" className="py-16 md:py-24 bg-[#0b110d] relative overflow-hidden">
-          <div className="absolute top-4 md:top-8 left-1/2 -translate-x-1/2 z-10 w-[90%] md:w-auto flex justify-center">
-            <div className="bg-[#ffc2ce] text-[#0b110d] px-4 md:px-6 py-2 rounded-full font-bold text-xs md:text-base shadow-lg animate-pulse whitespace-nowrap">
-              🔥 OFERTA BLACK FRIDAY 🔥
+        {/* Plans Section - Luxury Pricing */}
+        <section id="planos" className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-[#c9a962]/40 to-transparent"></div>
+          
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-3 bg-[#c9a962]/10 border border-[#c9a962]/30 px-6 py-3 mb-8">
+                <Sparkles className="w-4 h-4 text-[#c9a962]" />
+                <span className="text-[#c9a962] text-sm tracking-[0.2em] uppercase">Oferta Exclusiva Black Friday</span>
+                <Sparkles className="w-4 h-4 text-[#c9a962]" />
+              </div>
             </div>
-          </div>
 
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-6 mt-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Escolha seu plano
+            <div className="text-center mb-20">
+              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Investimento</p>
+              <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
+                Planos <span className="text-[#c9a962] italic">Exclusivos</span>
               </h2>
-              <p className="text-[#ffc2ce] text-lg md:text-xl font-semibold">
-                Preços especiais de Black Friday - Por tempo limitado!
+              <div className="w-24 h-px bg-[#c9a962] mx-auto mb-8"></div>
+              <p className="text-lg text-white/60 max-w-xl mx-auto font-extralight">
+                Escolha o plano que melhor se adapta ao seu estilo de vida
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {PLANS.slice().reverse().map((plan, index) => (
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+              {PLANS.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`${plan.bgColor} rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow border border-[#ffc2ce] flex flex-col relative md:order-${index === 0 ? '2' : '1'}`}
+                  className={`relative p-10 lg:p-12 transition-all duration-500 ${
+                    plan.featured 
+                      ? 'bg-gradient-to-b from-[#c9a962]/10 to-[#0a0a0a] border-2 border-[#c9a962]' 
+                      : 'bg-[#111] border border-[#1a1a1a] hover:border-[#c9a962]/40'
+                  }`}
                 >
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                  {/* Discount Badge */}
+                  <div className="absolute -top-4 left-8 bg-[#c9a962] text-[#0a0a0a] px-4 py-1 text-xs font-semibold tracking-wider">
                     {plan.discount}
                   </div>
+                  
                   {plan.badge && (
-                    <div className="absolute top-4 right-4 bg-[#0b110d] text-[#f0f0d8] px-4 py-1 rounded-full text-sm font-bold">
+                    <div className="absolute -top-4 right-8 bg-[#0a0a0a] border border-[#c9a962] text-[#c9a962] px-4 py-1 text-xs tracking-wider">
                       {plan.badge}
                     </div>
                   )}
-                  <h3 className={`text-2xl font-bold ${plan.textColor} mb-2`}>{plan.name}</h3>
-                  <div className="mb-6">
-                    <p className={`${plan.textColor} opacity-60 text-xl line-through mb-1`}>De {plan.oldPrice}</p>
-                    <p className={`${plan.textColor} text-4xl font-bold`}>Por {plan.price}</p>
+                  
+                  <div className="mb-8">
+                    <p className="text-[#c9a962] text-sm tracking-[0.2em] uppercase mb-2">{plan.subtitle}</p>
+                    <h3 className="text-3xl font-light text-white tracking-wide">{plan.name}</h3>
                   </div>
-                  <ul className={`space-y-3 mb-8 ${plan.textColor} flex-grow`}>
+                  
+                  <div className="mb-10">
+                    <p className="text-white/40 text-lg line-through mb-2">De {plan.oldPrice}</p>
+                    <p className="text-4xl lg:text-5xl font-light text-white">
+                      Por <span className="text-[#c9a962]">{plan.price}</span>
+                    </p>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-10">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2">
-                        <span className="font-bold">✓</span> {feature}
+                      <li key={feature} className="flex items-start gap-3 text-white/70 font-extralight">
+                        <Diamond className="w-4 h-4 text-[#c9a962] mt-1 flex-shrink-0" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  
                   <a
                     href={plan.paymentLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block w-full ${plan.buttonColor} py-3 rounded-lg font-bold text-center hover:bg-opacity-90 transition-all mt-auto`}
+                    className={`block w-full py-4 text-center text-sm tracking-[0.2em] uppercase transition-all duration-300 ${
+                      plan.featured
+                        ? 'bg-[#c9a962] text-[#0a0a0a] hover:bg-[#d4b872]'
+                        : 'border border-[#c9a962] text-[#c9a962] hover:bg-[#c9a962] hover:text-[#0a0a0a]'
+                    }`}
                   >
-                    Contratar agora
+                    Começar Agora
                   </a>
                 </article>
               ))}
@@ -317,34 +398,39 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="sobre" className="py-16 md:py-24 bg-[#f0f0d8]">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
+        {/* About Section - Elegant Biography */}
+        <section id="sobre" className="py-24 md:py-32 bg-[#080808]">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              <div className="order-2 lg:order-1 relative">
+                <div className="absolute -inset-4 border border-[#c9a962]/20"></div>
                 <img
                   src="/quezia-hero.jpg"
                   alt="Quezia Reis Personal Trainer"
-                  className="rounded-lg shadow-lg w-full"
+                  className="w-full grayscale hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
               </div>
 
-              <article className="order-1 md:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0b110d] mb-6">
-                  Conheça sua treinadora
+              <article className="order-1 lg:order-2">
+                <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Sua Treinadora</p>
+                <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-4">
+                  Quezia <span className="text-[#c9a962] italic">Reis</span>
                 </h2>
+                <div className="w-24 h-px bg-[#c9a962] mb-8"></div>
 
-                <h3 className="text-2xl font-bold text-[#ffc2ce] mb-4">Quezia Reis</h3>
-
-                <p className="text-[#0b110d] mb-4 leading-relaxed">
-                  A mente por trás do Método Rica de Saúde, Quezia Reis transforma a vida de mulheres que buscam resultados reais sem sacrificar a rotina.
+                <p className="text-white/60 mb-10 font-extralight leading-relaxed text-lg">
+                  Criadora do Método Rica de Saúde, Quezia Reis é a referência para mulheres que buscam transformação real sem comprometer sua rotina de excelência.
                 </p>
 
-                <div className="space-y-4 text-[#0b110d]">
+                <div className="space-y-8">
                   {ABOUT_SECTIONS.map((section) => (
-                    <div key={section.title}>
-                      <h4 className="font-bold text-[#ffc2ce] mb-1">{section.title}</h4>
-                      <p>{section.description}</p>
+                    <div key={section.title} className="flex gap-6">
+                      <section.icon className="w-8 h-8 text-[#c9a962] flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-white font-light tracking-wide mb-2">{section.title}</h4>
+                        <p className="text-white/50 font-extralight leading-relaxed">{section.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -353,56 +439,62 @@ export default function Home() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-8 bg-[#ffc2ce] text-[#0b110d] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+                  className="inline-block mt-12 bg-[#c9a962] text-[#0a0a0a] px-12 py-4 text-sm tracking-[0.2em] uppercase hover:bg-[#d4b872] transition-all duration-300"
                 >
-                  Fale com a Quezia
+                  Agendar Consultoria
                 </a>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-[#0b110d]">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Pronto para começar?
+        {/* CTA Section - Premium Closing */}
+        <section className="py-24 md:py-32 bg-[#0a0a0a] relative">
+          <div className="absolute inset-0 bg-[url('/quezia-gym.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]"></div>
+          
+          <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
+            <Sparkles className="w-8 h-8 text-[#c9a962] mx-auto mb-8" />
+            <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
+              Pronta para sua <span className="text-[#c9a962] italic">Transformação</span>?
             </h2>
-            <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
-              Não espere mais. Seu corpo e mente agradecem. Comece sua transformação com o Método Rica de Saúde.
+            <p className="text-lg text-white/60 mb-12 max-w-2xl mx-auto font-extralight leading-relaxed">
+              Dê o primeiro passo rumo à versão mais extraordinária de si mesma. Sua jornada de excelência começa agora.
             </p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#ffc2ce] text-[#0b110d] px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all"
+              className="inline-block bg-[#c9a962] text-[#0a0a0a] px-16 py-5 text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#d4b872] transition-all duration-300"
             >
-              Envie uma mensagem
+              Iniciar Jornada
             </a>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#0b110d] text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+      {/* Footer Premium */}
+      <footer className="bg-[#050505] py-16 border-t border-[#1a1a1a]">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-1 font-bold text-xl mb-4">
-                <span className="text-[#ffc2ce]">QUEZIA</span>
+              <div className="flex items-center gap-2 text-xl tracking-[0.2em] font-light mb-6">
+                <span className="text-[#c9a962]">QUEZIA</span>
                 <span className="text-white">REIS</span>
               </div>
-              <p className="text-sm opacity-75">
-                Método Rica de Saúde - Treino Personalizado para Mulheres
+              <p className="text-white/40 font-extralight leading-relaxed">
+                Método Rica de Saúde — Treino personalizado de alto padrão para mulheres de excelência.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold mb-4">Links rápidos</h3>
-              <ul className="space-y-2 text-sm opacity-75">
-                {MENU_ITEMS.slice(0, 3).map((item) => (
+              <h3 className="text-sm tracking-[0.2em] uppercase text-white/60 mb-6">Navegação</h3>
+              <ul className="space-y-3">
+                {MENU_ITEMS.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className="hover:text-[#ffc2ce] transition-colors"
+                      className="text-white/40 hover:text-[#c9a962] transition-colors font-extralight"
                     >
                       {item.label}
                     </button>
@@ -412,13 +504,13 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="font-bold mb-4">Conecte-se</h3>
-              <div className="flex gap-4">
+              <h3 className="text-sm tracking-[0.2em] uppercase text-white/60 mb-6">Redes Sociais</h3>
+              <div className="flex gap-6">
                 <a
                   href="https://www.instagram.com/queziareisrs/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity text-white"
+                  className="text-white/40 hover:text-[#c9a962] transition-colors"
                   aria-label="Instagram"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -429,7 +521,7 @@ export default function Home() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity text-white"
+                  className="text-white/40 hover:text-[#c9a962] transition-colors"
                   aria-label="WhatsApp"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -440,17 +532,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-8 text-center text-sm opacity-75">
-            <p className="mb-2">
+          <div className="border-t border-[#1a1a1a] pt-8 text-center">
+            <p className="text-white/30 text-sm font-extralight mb-2">
               © 2025 Quezia Reis Personal Trainer. Todos os direitos reservados.
             </p>
-            <p>
+            <p className="text-white/20 text-sm font-extralight">
               Desenvolvido por{" "}
               <a
                 href="https://meu-portfolio-25xr9d90s-santanayures-projects.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#ffc2ce] transition-colors font-semibold"
+                className="hover:text-[#c9a962] transition-colors"
               >
                 Yure Santana
               </a>
@@ -459,16 +551,17 @@ export default function Home() {
         </div>
       </footer>
 
+      {/* Scroll to Top - Luxury */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#ffc2ce] text-[#0b110d] p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all z-50"
+          className="fixed bottom-8 right-8 bg-[#c9a962] text-[#0a0a0a] p-4 shadow-lg shadow-[#c9a962]/20 hover:bg-[#d4b872] transition-all z-50"
           aria-label="Voltar ao topo"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
