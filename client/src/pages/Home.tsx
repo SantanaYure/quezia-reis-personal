@@ -30,10 +30,10 @@ const METHOD_CARDS = [
 ];
 
 const TESTIMONIALS = [
-  { id: 1, image: "/depoimento1.jpeg", alt: "Depoimento de cliente satisfeita com resultados do treino" },
-  { id: 2, image: "/depoimento2.jpeg", alt: "Feedback positivo sobre o método Ricas de Saúde" },
-  { id: 3, image: "/depoimento3.jpeg", alt: "Cliente compartilhando sua transformação" },
-  { id: 4, image: "/depoimento4.jpeg", alt: "Relato de experiência com treino personalizado" },
+  { id: 1, image: "https://quezia-lp-assets.s3.sa-east-1.amazonaws.com/depoimento1.jpeg", alt: "Depoimento de cliente satisfeita com resultados do treino" },
+  { id: 2, image: "https://quezia-lp-assets.s3.sa-east-1.amazonaws.com/depoimento2.jpeg", alt: "Feedback positivo sobre o método Ricas de Saúde" },
+  { id: 3, image: "https://quezia-lp-assets.s3.sa-east-1.amazonaws.com/depoimento3.jpeg", alt: "Cliente compartilhando sua transformação" },
+  { id: 4, image: "https://quezia-lp-assets.s3.sa-east-1.amazonaws.com/depoimento4.jpeg", alt: "Relato de experiência com treino personalizado" },
 ];
 
 const PLANS = [
