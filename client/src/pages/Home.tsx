@@ -31,14 +31,14 @@ const METHOD_CARDS = [
 
 const TESTIMONIALS = [
   { id: 1, image: "/depoimento1.jpeg", alt: "Depoimento de cliente satisfeita com resultados do treino" },
-  { id: 2, image: "/depoimento2.jpeg", alt: "Feedback positivo sobre o método Rica de Saúde" },
+  { id: 2, image: "/depoimento2.jpeg", alt: "Feedback positivo sobre o método Ricas de Saúde" },
   { id: 3, image: "/depoimento3.jpeg", alt: "Cliente compartilhando sua transformação" },
   { id: 4, image: "/depoimento4.jpeg", alt: "Relato de experiência com treino personalizado" },
 ];
 
 const PLANS = [
   {
-    name: "Signature",
+    name: "",
     subtitle: "Trimestral",
     discount: "30% OFF",
     oldPrice: "R$ 1.000",
@@ -53,7 +53,7 @@ const PLANS = [
     featured: false,
   },
   {
-    name: "Prestige",
+    name: "",
     subtitle: "Anual",
     discount: "50% OFF",
     oldPrice: "R$ 3.000",
@@ -205,7 +205,7 @@ export default function Home() {
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <div className="mb-8">
               <Sparkles className="w-8 h-8 text-[#c9a962] mx-auto mb-6" />
-              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Método Rica de Saúde</p>
+              <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Método Ricas de Saúde</p>
             </div>
             
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-wide">
@@ -246,7 +246,7 @@ export default function Home() {
             <div className="text-center mb-20">
               <p className="text-[#c9a962] text-sm tracking-[0.3em] uppercase mb-4">Exclusividade</p>
               <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
-                Método <span className="text-[#c9a962] italic">Rica de Saúde</span>
+                Método <span className="text-[#c9a962] italic">Ricas de Saúde</span>
               </h2>
               <div className="w-24 h-px bg-[#c9a962] mx-auto mb-8"></div>
               <p className="text-lg text-white/60 max-w-2xl mx-auto font-extralight leading-relaxed">
@@ -361,7 +361,7 @@ export default function Home() {
                   
                   <div className="mb-8">
                     <p className="text-[#c9a962] text-sm tracking-[0.2em] uppercase mb-2">{plan.subtitle}</p>
-                    <h3 className="text-3xl font-light text-white tracking-wide">{plan.name}</h3>
+                    {/* Nome removido */}
                   </div>
                   
                   <div className="mb-10">
@@ -420,7 +420,7 @@ export default function Home() {
                 <div className="w-24 h-px bg-[#c9a962] mb-8"></div>
 
                 <p className="text-white/60 mb-10 font-extralight leading-relaxed text-lg">
-                  Criadora do Método Rica de Saúde, Quezia Reis é a referência para mulheres que buscam transformação real sem comprometer sua rotina de excelência.
+                  Criadora do Método Ricas de Saúde, Quezia Reis é a referência para mulheres que buscam transformação real sem comprometer sua rotina de excelência.
                 </p>
 
                 <div className="space-y-8">
@@ -483,7 +483,7 @@ export default function Home() {
                 <span className="text-white">REIS</span>
               </div>
               <p className="text-white/40 font-extralight leading-relaxed">
-                Método Rica de Saúde — Treino personalizado de alto padrão para mulheres de excelência.
+                Método Ricas de Saúde — Treino personalizado de alto padrão para mulheres de excelência.
               </p>
             </div>
 
