@@ -281,6 +281,44 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section - Gallery Style */}
+                {/* Truth Section - Highlighted Statement */}
+                <section className="py-24 md:py-32 bg-[#f0efed]">
+                  <div className="container mx-auto px-6 lg:px-12">
+                    <div className="max-w-3xl mx-auto text-center">
+                      <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-8 text-[#0a0a0a]">A verdade é simples</h2>
+                      <p className="text-lg md:text-xl text-[#2a2a2a] mb-8 font-extralight leading-relaxed">
+                        nenhum treino genérico da internet vai entregar o resultado que você deseja, porque ele não entende sua rotina, sua história, suas dores, sua fase ou seus objetivos.
+                      </p>
+                      <p className="text-[#ffc2ce] text-base font-medium mb-8">Por que tantas mulheres estão trocando treinos prontos por um acompanhamento personalizado?</p>
+                      <ul className="text-left inline-block mx-auto mb-8 text-[#0a0a0a] text-lg font-light space-y-3">
+                        <li>✔ Porque personalização multiplica resultados</li>
+                        <li>✔ Porque treinar sozinha te faz perder tempo (e às vezes piora as dores)</li>
+                        <li>✔ Porque rotina corrida não é desculpa — é realidade</li>
+                        <li>✔ Porque mulher precisa de um olhar específico</li>
+                        <li>✔ Porque quem tem acompanhamento, mantém constância</li>
+                      </ul>
+                      <p className="text-[#ffc2ce] text-base font-medium mb-8">O que você recebe ao entrar (e o que ninguém te conta)</p>
+                      <ul className="text-left inline-block mx-auto mb-8 text-[#0a0a0a] text-lg font-light space-y-3">
+                        <li>→ Um programa que tira você do improviso e coloca no resultado</li>
+                        <li>→ Periodização que faz seu corpo evoluir mês após mês</li>
+                        <li>→ Ajustes frequentes para você nunca ficar travada</li>
+                        <li>→ Execução correta para evitar dores e acelerar ganhos<br/>Eu cuido da técnica para você colher segurança, força e estética.</li>
+                        <li>→ Um treino que acompanha sua vida — não o contrário</li>
+                      </ul>
+                      <p className="text-[#ffc2ce] text-base font-medium mb-8">Para quem é essa consultoria?</p>
+                      <ul className="text-left inline-block mx-auto mb-8 text-[#0a0a0a] text-lg font-light space-y-3">
+                        <li>🔥 sair do ciclo “começa e para”</li>
+                        <li>🔥 saber exatamente o que fazer no treino</li>
+                        <li>🔥 abandonar treinos prontos e aprender a treinar certo</li>
+                        <li>🔥 fortalecer abdômen, lombar e corpo inteiro</li>
+                        <li>🔥 recuperar confiança depois da gestação</li>
+                        <li>🔥 ter disposição na rotina</li>
+                        <li>🔥 ver mudança no corpo de forma sustentável</li>
+                      </ul>
+                      <p className="text-lg md:text-xl text-[#2a2a2a] font-extralight leading-relaxed mt-8">Se você se reconhece em pelo menos um desses pontos…<br/>você está no lugar certo.</p>
+                    </div>
+                  </div>
+                </section>
         <section id="depoimentos" className="py-24 md:py-32 bg-[#080808]">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="text-center mb-20">
