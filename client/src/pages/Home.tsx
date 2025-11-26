@@ -5,10 +5,10 @@ const PHONE_NUMBER = "5571988895613";
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
 
 const MENU_ITEMS = [
-  { id: "metodo", label: "Método" },
+  { id: "metodo", label: "O Método" },
+  { id: "planos", label: "App MFIT" },
+  { id: "planos", label: "Bônus Prime" },
   { id: "depoimentos", label: "Resultados" },
-  { id: "planos", label: "Exclusividade" },
-  { id: "sobre", label: "Sobre" },
 ];
 
 const METHOD_CARDS = [
@@ -121,8 +121,8 @@ export default function Home() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'}`}>
         <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between rounded-xl">
           <h1 className="flex items-center gap-2 text-2xl tracking-[0.2em] font-light">
-            <span className="text-[#ffc2ce]">QUEZIA</span>
-            <span className="text-white">REIS</span>
+            <span className="text-white font-cormorant">QUEZIA</span>
+            <span className="text-[#ffc2ce] font-cormorant">REIS</span>
           </h1>
 
           <div className="hidden lg:flex items-center gap-12">
@@ -139,9 +139,9 @@ export default function Home() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#ffc2ce] text-[#ffc2ce] px-8 py-3 text-sm tracking-[0.15em] uppercase hover:bg-[#ffc2ce] hover:text-[#0a0a0a] transition-all duration-300 rounded-xl"
+              className="bg-white text-[#0a0a0a] px-8 py-3 text-sm tracking-[0.15em] hover:bg-white/90 transition-all duration-300 rounded-lg font-medium"
             >
-              Agendar
+              Começar Agora
             </a>
           </div>
 
@@ -169,9 +169,9 @@ export default function Home() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full border border-[#ffc2ce] text-[#ffc2ce] px-8 py-3 text-sm tracking-[0.15em] uppercase text-center hover:bg-[#ffc2ce] hover:text-[#0a0a0a] transition-all duration-300"
+              className="block w-full bg-white text-[#0a0a0a] px-8 py-3 text-sm tracking-[0.15em] text-center hover:bg-white/90 transition-all duration-300 rounded-lg font-medium"
             >
-              Agendar
+              Começar Agora
             </a>
           </div>
         )}
