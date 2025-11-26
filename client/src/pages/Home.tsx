@@ -119,7 +119,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0a] text-white font-light">
       {/* Header Premium */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'}`}>
-        <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
+        <nav className="container mx-auto px-6 lg:px-12 py-5 flex items-center justify-between rounded-xl">
           <h1 className="flex items-center gap-2 text-2xl tracking-[0.2em] font-light">
             <span className="text-[#ffc2ce]">QUEZIA</span>
             <span className="text-white">REIS</span>
@@ -139,7 +139,7 @@ export default function Home() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#ffc2ce] text-[#ffc2ce] px-8 py-3 text-sm tracking-[0.15em] uppercase hover:bg-[#ffc2ce] hover:text-[#0a0a0a] transition-all duration-300"
+              className="border border-[#ffc2ce] text-[#ffc2ce] px-8 py-3 text-sm tracking-[0.15em] uppercase hover:bg-[#ffc2ce] hover:text-[#0a0a0a] transition-all duration-300 rounded-xl"
             >
               Agendar
             </a>
@@ -155,7 +155,7 @@ export default function Home() {
         </nav>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#0a0a0a]/98 backdrop-blur-md px-6 py-8 space-y-6 border-t border-[#ffc2ce]/20">
+          <div className="lg:hidden bg-[#0a0a0a]/98 backdrop-blur-md px-6 py-8 space-y-6 border-t border-[#ffc2ce]/20 rounded-xl">
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.id}
@@ -220,13 +220,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => scrollToSection("planos")}
-                className="bg-[#ffc2ce] text-[#0a0a0a] px-12 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#ffd4dc] transition-all duration-300"
+                className="bg-[#ffc2ce] text-[#0a0a0a] px-12 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#ffd4dc] transition-all duration-300 rounded-xl"
               >
                 Conhecer Planos
               </button>
               <button
                 onClick={() => scrollToSection("metodo")}
-                className="border border-white/30 text-white px-12 py-4 text-sm tracking-[0.2em] uppercase hover:border-[#ffc2ce] hover:text-[#ffc2ce] transition-all duration-300"
+                className="border border-white/30 text-white px-12 py-4 text-sm tracking-[0.2em] uppercase hover:border-[#ffc2ce] hover:text-[#ffc2ce] transition-all duration-300 rounded-xl"
               >
                 Saiba Mais
               </button>
@@ -255,8 +255,8 @@ export default function Home() {
             </div>
 
             {/* Premium Quote */}
-            <div className="relative max-w-4xl mx-auto mb-20 p-12 border border-[#ffc2ce]/20">
-              <div className="absolute -top-4 left-8 bg-[#0a0a0a] px-4">
+            <div className="relative max-w-4xl mx-auto mb-20 p-12 border border-[#ffc2ce]/20 rounded-xl">
+              <div className="absolute -top-4 left-8 bg-[#0a0a0a] px-4 rounded-xl">
                 <span className="text-[#ffc2ce] text-4xl">"</span>
               </div>
               <p className="text-xl md:text-2xl text-white/80 italic font-extralight leading-relaxed text-center">
@@ -269,7 +269,7 @@ export default function Home() {
               {METHOD_CARDS.map((card) => (
                 <article
                   key={card.title}
-                  className="group p-10 bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-[#1a1a1a] hover:border-[#ffc2ce]/40 transition-all duration-500"
+                  className="group p-10 bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-[#1a1a1a] hover:border-[#ffc2ce]/40 transition-all duration-500 rounded-xl"
                 >
                   <card.icon className="w-10 h-10 text-[#ffc2ce] mb-8 group-hover:scale-110 transition-transform duration-300" />
                   <h4 className="text-xl font-light text-white mb-4 tracking-wide">{card.title}</h4>
@@ -282,9 +282,9 @@ export default function Home() {
 
         {/* Testimonials Section - Gallery Style */}
                 {/* Truth Section - Highlighted Statement */}
-                <section className="py-24 md:py-32 bg-[#f0efed]">
-                  <div className="container mx-auto px-6 lg:px-12">
-                    <div className="max-w-3xl mx-auto text-center">
+                <section className="py-24 md:py-32 bg-[#f0efed] rounded-xl">
+                  <div className="container mx-auto px-6 lg:px-12 rounded-xl">
+                    <div className="max-w-3xl mx-auto text-center rounded-xl">
                       <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-8 text-[#0a0a0a]">A verdade é simples</h2>
                       <p className="text-lg md:text-xl text-[#2a2a2a] mb-8 font-extralight leading-relaxed">
                         nenhum treino genérico da internet vai entregar o resultado que você deseja, porque ele não entende sua rotina, sua história, suas dores, sua fase ou seus objetivos.
@@ -333,7 +333,7 @@ export default function Home() {
               {TESTIMONIALS.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="relative overflow-hidden bg-[#111] aspect-3/4"
+                  className="relative overflow-hidden bg-[#111] aspect-3/4 rounded-xl"
                 > 
                   <img
                     src={testimonial.image}
@@ -380,7 +380,7 @@ export default function Home() {
               {PLANS.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`relative p-10 lg:p-12 transition-all duration-500 ${
+                  className={`relative p-10 lg:p-12 transition-all duration-500 rounded-xl ${
                     plan.featured 
                       ? 'bg-gradient-to-b from-[#ffc2ce]/10 to-[#0a0a0a] border-2 border-[#ffc2ce]' 
                       : 'bg-[#111] border border-[#1a1a1a] hover:border-[#ffc2ce]/40'
@@ -392,7 +392,7 @@ export default function Home() {
                   </div>
                   
                   {plan.badge && (
-                    <div className="absolute -top-4 right-8 bg-[#0a0a0a] border border-[#ffc2ce] text-[#ffc2ce] px-4 py-1 text-xs tracking-wider">
+                    <div className="absolute -top-4 right-8 bg-[#0a0a0a] border border-[#ffc2ce] text-[#ffc2ce] px-4 py-1 text-xs tracking-wider rounded-xl">
                       {plan.badge}
                     </div>
                   )}
@@ -422,7 +422,7 @@ export default function Home() {
                     href={plan.paymentLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block w-full py-4 text-center text-sm tracking-[0.2em] uppercase transition-all duration-300 ${
+                    className={`block w-full py-4 text-center text-sm tracking-[0.2em] uppercase transition-all duration-300 rounded-xl ${
                       plan.featured
                         ? 'bg-[#ffc2ce] text-[#0a0a0a] hover:bg-[#ffd4dc]'
                         : 'border border-[#ffc2ce] text-[#ffc2ce] hover:bg-[#ffc2ce] hover:text-[#0a0a0a]'
@@ -441,11 +441,11 @@ export default function Home() {
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <div className="order-2 lg:order-1 relative">
-                <div className="absolute -inset-4 border border-[#ffc2ce]/20"></div>
+                <div className="absolute -inset-4 border border-[#ffc2ce]/20 rounded-xl"></div>
                 <img
                   src="/quezia-hero.jpg"
                   alt="Quezia Reis Personal Trainer"
-                  className="w-full transition-all duration-700"
+                  className="w-full transition-all duration-700 rounded-xl"
                   loading="lazy"
                 />
               </div>
