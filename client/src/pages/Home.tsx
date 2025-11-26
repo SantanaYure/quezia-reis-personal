@@ -208,9 +208,8 @@ export default function Home() {
               <p className="text-[#ffc2ce] text-sm tracking-[0.3em] uppercase mb-4">Método Ricas de Saúde</p>
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-wide">
-              Transformação
-              <span className="block text-[#ffc2ce] italic font-extralight">Exclusiva</span>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-wide whitespace-nowrap">
+              Transforme seu corpo e mente
             </h2>
             
             <p className="text-lg md:text-xl text-white/70 mb-12 font-extralight tracking-wide max-w-2xl mx-auto leading-relaxed">
@@ -244,7 +243,6 @@ export default function Home() {
         <section id="metodo" className="py-24 md:py-32 bg-[#0a0a0a]">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="text-center mb-20">
-              <p className="text-[#ffc2ce] text-sm tracking-[0.3em] uppercase mb-4">Exclusividade</p>
               <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
                 Método <span className="text-[#ffc2ce] italic">Ricas de Saúde</span>
               </h2>
