@@ -295,17 +295,17 @@ export default function Home() {
               {TESTIMONIALS.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="group relative overflow-hidden bg-[#111] aspect-[3/4]"
+                  className="relative overflow-hidden bg-[#111] aspect-3/4"
                 > 
                   <img
                     src={testimonial.image}
                     alt={testimonial.alt}
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover opacity-90 transition-all duration-700"
                     loading="lazy"
                     width="300"
                     height="400"
                   />
-                  <div className="absolute inset-0 border border-[#ffc2ce]/0 group-hover:border-[#ffc2ce]/40 transition-all duration-500"></div>
+                  <div className="absolute inset-0 border border-[#ffc2ce]/0 transition-all duration-500"></div>
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
                 </div>
               ))}
@@ -407,7 +407,7 @@ export default function Home() {
                 <img
                   src="/quezia-hero.jpg"
                   alt="Quezia Reis Personal Trainer"
-                  className="w-full grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full transition-all duration-700"
                   loading="lazy"
                 />
               </div>
